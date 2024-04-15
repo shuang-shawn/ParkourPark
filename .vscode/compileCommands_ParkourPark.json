@@ -1,0 +1,42 @@
+[
+	{
+		"file": "K:\\UE_repos\\Parkour\\ParkourPark\\Source\\ParkourPark\\MovingPlatform.cpp",
+		"arguments": [
+			"K:\\CS\\Visual Studio\\VC\\Tools\\MSVC\\14.34.31933\\bin\\Hostx64\\x64\\cl.exe",
+			"@K:\\UE_repos\\Parkour\\ParkourPark\\.vscode\\compileCommands_ParkourPark\\ParkourPark.1.rsp"
+		],
+		"directory": "K:\\UE_5.3\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "K:\\UE_repos\\Parkour\\ParkourPark\\Source\\ParkourPark\\MovingPlatform.h",
+		"arguments": [
+			"K:\\CS\\Visual Studio\\VC\\Tools\\MSVC\\14.34.31933\\bin\\Hostx64\\x64\\cl.exe",
+			"@K:\\UE_repos\\Parkour\\ParkourPark\\.vscode\\compileCommands_ParkourPark\\ParkourPark.1.rsp"
+		],
+		"directory": "K:\\UE_5.3\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "K:\\UE_repos\\Parkour\\ParkourPark\\Source\\ParkourPark\\ParkourPark.Build.cs",
+		"arguments": [
+			"K:\\CS\\Visual Studio\\VC\\Tools\\MSVC\\14.34.31933\\bin\\Hostx64\\x64\\cl.exe",
+			"@K:\\UE_repos\\Parkour\\ParkourPark\\.vscode\\compileCommands_ParkourPark\\ParkourPark.1.rsp"
+		],
+		"directory": "K:\\UE_5.3\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "K:\\UE_repos\\Parkour\\ParkourPark\\Source\\ParkourPark\\ParkourPark.cpp",
+		"arguments": [
+			"K:\\CS\\Visual Studio\\VC\\Tools\\MSVC\\14.34.31933\\bin\\Hostx64\\x64\\cl.exe",
+			"@K:\\UE_repos\\Parkour\\ParkourPark\\.vscode\\compileCommands_ParkourPark\\ParkourPark.1.rsp"
+		],
+		"directory": "K:\\UE_5.3\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "K:\\UE_repos\\Parkour\\ParkourPark\\Source\\ParkourPark\\ParkourPark.h",
+		"arguments": [
+			"K:\\CS\\Visual Studio\\VC\\Tools\\MSVC\\14.34.31933\\bin\\Hostx64\\x64\\cl.exe",
+			"@K:\\UE_repos\\Parkour\\ParkourPark\\.vscode\\compileCommands_ParkourPark\\ParkourPark.1.rsp"
+		],
+		"directory": "K:\\UE_5.3\\UE_5.3\\Engine\\Source"
+	}
+]
