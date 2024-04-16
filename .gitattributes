@@ -1,2 +1,10 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+*.uasset filter=lfs diff=lfs merge=lfs -text
+*.UASSET filter=lfs diff=lfs merge=lfs -text
+*.upack filter=lfs diff=lfs merge=lfs -text
+*.UPACK filter=lfs diff=lfs merge=lfs -text
+*.upk filter=lfs diff=lfs merge=lfs -text
+*.UPK filter=lfs diff=lfs merge=lfs -text
+*.umap filter=lfs diff=lfs merge=lfs -text
+*.UMAP filter=lfs diff=lfs merge=lfs -text
