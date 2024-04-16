@@ -15,13 +15,30 @@ AMovingPlatform::AMovingPlatform()
 void AMovingPlatform::BeginPlay()
 {
 	Super::BeginPlay();
+	MyVector = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
+	MyVector.X += 300;
+	MyVector.Y += 300;
+
 	
+	
+	
+	
+
+	 
+
 }
 
 // Called every frame
 void AMovingPlatform::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	FVector LocalVector = MyVector;
+
+
+	LocalVector.Z = LocalVector.Z + 0.1;
+	MyVector.Z += 0.1;
+	SetActorLocation(MyVector);
 
 }
 
