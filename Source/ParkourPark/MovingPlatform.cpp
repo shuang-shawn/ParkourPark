@@ -15,9 +15,7 @@ AMovingPlatform::AMovingPlatform()
 void AMovingPlatform::BeginPlay()
 {
 	Super::BeginPlay();
-	MyVector = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
-	MyVector.X += 300;
-	MyVector.Y += 300;
+	StartLocation = GetActorLocation();
 
 	
 	
@@ -29,16 +27,32 @@ void AMovingPlatform::BeginPlay()
 }
 
 // Called every frame
+
 void AMovingPlatform::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	FVector LocalVector = MyVector;
+	FVector CurrentLocation = GetActorLocation();
+	CurrentLocation = CurrentLocation + PlatformVelocity * DeltaTime;
+	SetActorLocation(CurrentLocation);
+
+	float DistanceMoved = FVector::Dist(StartLocation, CurrentLocation);
+
+	if (DistanceMoved > MoveDistance) {
+		StartLocation = StartLocation + MoveDistance * PlatformVelocity.GetSafeNormal();
+		SetActorLocation(StartLocation);
+		PlatformVelocity *= -1;
+	} 
 
 
-	LocalVector.Z = LocalVector.Z + 0.1;
-	MyVector.Z += 0.1;
-	SetActorLocation(MyVector);
+	
+	
+
+	
+
+
+	
+	
 
 }
 

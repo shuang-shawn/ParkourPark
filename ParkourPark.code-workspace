@@ -11,7 +11,19 @@
 	],
 	"settings": {
 		"typescript.tsc.autoDetect": "off",
-		"npm.autoDetect": "off"
+		"npm.autoDetect": "off",
+		"files.associations": {
+			"algorithm": "cpp",
+			"execution": "cpp",
+			"filesystem": "cpp",
+			"ranges": "cpp",
+			"regex": "cpp",
+			"vector": "cpp",
+			"xstring": "cpp",
+			"xutility": "cpp",
+			"locale": "cpp",
+			"string": "cpp"
+		}
 	},
 	"extensions": {
 		"recommendations": [
