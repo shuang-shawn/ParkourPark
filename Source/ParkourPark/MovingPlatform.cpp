@@ -15,7 +15,13 @@ AMovingPlatform::AMovingPlatform()
 void AMovingPlatform::BeginPlay()
 {
 	Super::BeginPlay();
-	StartLocation = GetActorLocation();
+	startLocation = GetActorLocation();
+
+	FString MyString = GetName();
+
+	UE_LOG(LogTemp, Display, TEXT("Begin play: %s"), *MyString);
+	// UE_LOG(LogTemp, Warning, TEXT("Your message"));
+	// UE_LOG(LogTemp, Error, TEXT("Your message"));
 
 	
 	
@@ -31,28 +37,45 @@ void AMovingPlatform::BeginPlay()
 void AMovingPlatform::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
-	FVector CurrentLocation = GetActorLocation();
-	CurrentLocation = CurrentLocation + PlatformVelocity * DeltaTime;
-	SetActorLocation(CurrentLocation);
-
-	float DistanceMoved = FVector::Dist(StartLocation, CurrentLocation);
-
-	if (DistanceMoved > MoveDistance) {
-		StartLocation = StartLocation + MoveDistance * PlatformVelocity.GetSafeNormal();
-		SetActorLocation(StartLocation);
-		PlatformVelocity *= -1;
-	} 
-
-
+	MovePlatform(DeltaTime);
+	if (ShouldPlatformReturn()) {
+		ReturnPlatform(DeltaTime);
+	}
+	RotatePlatform(DeltaTime);
 	
 	
 
 	
-
-
-	
-	
-
 }
+
+
+void AMovingPlatform::MovePlatform(float DeltaTime)
+{
+	FVector CurrentLocation = GetActorLocation();
+	CurrentLocation = CurrentLocation + platformVelocity * DeltaTime;
+	SetActorLocation(CurrentLocation);
+}
+
+void AMovingPlatform::ReturnPlatform(float DeltaTime)
+{
+	startLocation = startLocation + moveDistance * platformVelocity.GetSafeNormal();
+	SetActorLocation(startLocation);
+	platformVelocity *= -1;
+}
+
+bool AMovingPlatform::ShouldPlatformReturn() const
+{
+	return GetDistanceMoved() > moveDistance;
+}
+
+float AMovingPlatform::GetDistanceMoved() const
+{
+	return FVector::Dist(startLocation, GetActorLocation());
+}
+
+void AMovingPlatform::RotatePlatform(float DeltaTime)
+{
+	AddActorLocalRotation(rotationVelocity * DeltaTime);
+}
+
 
